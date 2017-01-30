@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+  <title>Global Terrorist Attacks</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <script src="https://d3js.org/d3-time.v1.min.js"></script>
+  <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+  <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<!--  <script src="lib/jquery.js"></script>-->
+
+</head>
+
+<body>
+    
+    <div class ="container-fluid">
+        <div class="row">
+            <div class="jumbotron text-center">
+                <h1>World of Terrorism from 2000 to 2015</h1>
+                <p>Total incidents: 87009; Total deaths: 207830</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <div id="map" ></div>
+            <script type="text/javascript" src="map.js"></script>
+        </div>
+    </div>
+<!--
+    <div class="container-fluid">
+        <div class="row">
+            <h2>There are over one thounsand terrorist groups in the world. What we</h2>
+        </div>
+    </div>
+    
+-->
+<!--
+     <div class="container-fluid">
+        <div class = "row">
+        
+            <div id ="barchart"></div>
+            <script type="text/javascript" src="chart2.js"></script>
+
+        </div>
+    </div>
+-->
+    
+<!--
+        <div class="container-fluid">
+        <div class = "row">
+        <div class="col-md-3">
+            <div id = "cyclemarker"></div>
+            <script type="text/javascript" src="cycle.js"></script>
+        </div>
+        <div class="col-md-9">
+            <div id ="chart"></div>
+            <script type="text/javascript" src="chart.js"></script>
+        </div>
+        </div>
+    </div>
+-->
+    
+    <div class="container-fluild">
+        <div class="row">
+            <div class="col-sm-6 col-md-4-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">5498 Attacks 19419 deaths</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ShababAdmin.svg/2000px-ShababAdmin.svg.png" alt = "Islamic State of Iraq and the Levant">
+                    <div class = "overlay">
+                        <h2>Islamic State of Iraq and the Levant
+                            <p><font color = "#0094ff">2833 Attacks 19185 deaths</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Islamic_State_of_Iraq_and_the_Levant">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "http://www.motherjones.com/files/Logo_of_Boko_Haram.svg_.png" alt = "Boko Haram">
+                    <div class = "overlay">
+                        <h2>Boko Haram
+                            <p><font color = "#0094ff">1839 Attacks 17030 deaths</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Boko_Haram">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-2-5 col-lg-1-5">
+                <div class = "hovereffect">
+                     <img class="img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/ShababAdmin.svg/2000px-ShababAdmin.svg.png" alt = "Al-Shabaab">
+                    <div class = "overlay">
+                        <h2>Al-Shabaab
+                            <p><font color = "#0094ff">2127 Attacks 5793 deaths</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Al-Shabaab_(militant_group)">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4-5 col-lg-1-5"> 
+                <div class = "hovereffect">
+                   <img class="img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flag_of_Tehrik-i-Taliban.svg/900px-Flag_of_Tehrik-i-Taliban.svg.png" alt = "Tehrik-i-Taliban Pakistan (TTP)">
+                    <div class = "overlay">
+                        <h2>Tehrik-i-Taliban Pakistan (TTP)
+                            <p><font color = "#0094ff">1153 Attacks 5343 deaths</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Tehrik-i-Taliban_Pakistan">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+<!--
+         <div class="row">
+            <div class="col-sm-6 col-md-4-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class="img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/3/35/Flag_of_al-Qaeda_in_Iraq.svg" alt = "Al-Qaeda in Iraq">
+                    <div class = "overlay">
+                        <h2>Al-Qaida in Iraq
+                            <p><font color = "#0094ff">635 Attacks 4328 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Tanzim_Qaidat_al-Jihad_fi_Bilad_al-Rafidayn">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/3/30/Flag_of_Jihad.svg" alt = "Al-Qaeda">
+                    <div class = "overlay">
+                        <h2>Al-Qaida
+                            <p><font color = "#0094ff">55 Attacks 3369 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Al-Qaeda">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/2/28/AQMI_Flag_asymmetric.svg" alt = "Al-Qaida in the Arabian Peninsula (AQAP)">
+                    <div class = "overlay">
+                        <h2>Al-Qaida in the Arabian Peninsula (AQAP)
+                            <p><font color = "#0094ff">893 Attacks 3188 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Al-Qaeda_in_the_Arabian_Peninsula">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-2-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">210 Attacks 2687 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">240 Attacks 2498 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+         <div class="row">
+            <div class="col-sm-6 col-md-4-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">1666 Attacks 2171 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-5-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">581 Attacks 2138 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-3-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">277 Attacks 1887 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-2-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">1225 Attacks 1785 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4-5 col-lg-1-5">
+                <div class = "hovereffect">
+                    <img class = "img-responsive" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Taliban.svg/1280px-Flag_of_Taliban.svg.png" alt = "Taliban">
+                    <div class = "overlay">
+                        <h2>Taliban
+                            <p><font color = "#0094ff">67777 Attacks 117009 casualties</font></p>
+                        </h2>
+                        <a class="info" href="https://en.wikipedia.org/wiki/Taliban">More about This Group</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+-->
+        
+    </div>
+    
+<!--
+    <div class="container-fluid">
+        <div class = "row">
+        <div class="col-md-3">
+            <div id = "cyclemarker"></div>
+        </div>
+        <div class="col-md-9">
+            <div id ="chart"></div>
+            </div>
+        </div>
+    </div>
+-->
+    
+<!--
+    <div class="container-fluid">
+        <div class = "row">
+        
+            <div id ="barchart"></div>
+
+        </div>
+    </div>
+-->
+    <div class="container-fluid">
+        <div class = "row" style = "height:100px; padding-top:20px; padding-bottom:20px">
+            <center>
+                <h3>Top 14 Deadliest Terrorist Groups from 2000 to 2015</h3>
+<!--                <p>There are more than one thounsand terrorist groups around the world. Here we focus on the top 14 terrorist groups that claimed most of lives during the past 15 years.</p>-->
+            </center>
+        </div>
+        <div class = "row">
+            <div class="col-md-3">
+                <div id = "cyclemarker"></div>
+                <script type="text/javascript" src="cycle.js"></script>
+            </div>
+            <div class="col-md-9">
+                <div id ="stack_bar_chart">
+                <script type="text/javascript" src="stack_bar_chart.js"></script>
+                </div>
+            </div>
+<!--
+            <div class= "col-md-3">
+                <div id ="barchart">
+                    <script type="text/javascript" src="chart2.js"></script>
+                </div>
+            </div>
+-->
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class = "row">
+            <img class ="img-responsive" src="http://i2.cdn.cnn.com/cnnnext/dam/assets/150120115629-wtc-attacks-file-0911-super-169.jpg" style="width:100%">
+        </div>
+    </div>
+    
+<!--
+    <div class="container-fluid">
+        <div class = "row">
+            <div class="col-md-3"></div>
+            <div class="col-md-9">
+            <div id ="barchart"></div>
+            <script type="text/javascript" src="chart2.js"></script>
+            </div>
+        </div>http://ichef-1.bbci.co.uk/news/624/cpsprodpb/0C2B/production/_83751130_gettyimages-457546572.jpg
+    </div>https://img.rt.com/files/2015.11/original/564b933ec46188a85a8b459c.jpg
+-->
+    
+    <div class="container-fluid">
+        <div class = "row" style="height:800px; padding-top:100px;padding-left:200px; padding-bottom:100px; padding-right:200px">
+            <div class="col-md-3">
+                <h3>Attack Types of Each Terrorist Group</h3>
+            </div>
+            <div class="col-md-9">
+            <div id ="arcchart"></div>
+            <script type="text/javascript" src="arcchart.js"></script>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class = "row">
+            <img class ="img-responsive" src="https://img.rt.com/files/2015.11/original/564b933ec46188a85a8b459c.jpg" style="width:100%">
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class = "row" style="height:800px; padding-top:80px;padding-left:200px; padding-bottom:100px; padding-right:200px">
+            <div class="col-md-3">
+                <h3>Target Type of Each Terrorist Group</h3>
+            </div>
+            <div class="col-md-9">
+            <div id ="arcchart2"></div>
+            <script type="text/javascript" src="arcchart2.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class = "row">
+            <img class ="img-responsive" src="http://i2.cdn.cnn.com/cnnnext/dam/assets/160322162605-07-brussels-reax-0322-super-169.jpg" style="width:100%">
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class = "row" style="height:800px; padding-top:100px;padding-left:40px; padding-bottom:100px; padding-right:300px">
+            <div class="col-md-3">
+                <h3>Top 15 Countries with Most Victims</h3>
+            </div>
+            <div class="col-md-9">
+            <div id ="stack_area_chart"></div>
+            <script type="text/javascript" src="stack_area_chart.js"></script>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class = "row">
+            <img class ="img-responsive" src="http://maristmediahub.com/wp-content/uploads/2016/04/RTX192LJ-1.jpg" style="width:100%">
+        </div>
+    </div>
+    
+<!--  <script type="text/javascript" src="map.js"></script>-->
+<!--  <script type="text/javascript" src="chart2.js"></script>-->
+<!--  <script type="text/javascript" src="chart.js"></script>-->
+<!--  <script type="text/javascript" src="cycle.js"></script>-->
+<!--    http://maristmediahub.com/wp-content/uploads/2016/04/RTX192LJ-1.jpg-->
+  
+
+</body>
+
+</html>
